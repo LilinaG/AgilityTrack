@@ -1,3 +1,5 @@
+//Clase principal que arranca la aplicación.
+
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
