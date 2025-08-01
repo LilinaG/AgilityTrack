@@ -4,6 +4,9 @@
 //Por ahora, como no hay usuarios definidos en memoria ni token JWT, se usará el formulario de login por defecto generado por .formLogin(withDefaults()).
 //package com.example.demo.demo;
 
+package com.example.demo.demo;
+
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
