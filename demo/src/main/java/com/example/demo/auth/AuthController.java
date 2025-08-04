@@ -2,7 +2,9 @@
 //Controlador REST con endpoints públicos para login y registro.
 package com.example.demo.auth;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,16 +15,20 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor //Genera automáticamente un constructor con los argumentos necesarios
 
 public class AuthController {
+
+    private final AuthService authService;
+
+
     @PostMapping(value = "login") //Define un endpoint POST en /auth/login
-    public String login()
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request)
     {
-        return "Login from public endpoint";
+        return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping(value = "register") //Define un endpoint POST en /auth/register
-    public String register()
+    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request)
     {
-        return "Register from public endpoint";
+        return ResponseEntity.ok(authService.register(request));
     }
 
 }
